@@ -90,6 +90,7 @@ int main(int argc, char const *argv[])
 		for_each_n(begin(v), n, [](int& x){ std::cin >> x; });
 	}
 	//--------------------------------------------------------//
+	/// Explicit Use of Iterators
 	// +) container agnostic ⇒ easy to change container type
 	// +) works for all standard sequence containers
 	// +) no signed/unsigned index type hassle

@@ -117,7 +117,7 @@ int main(int argc, char const *argv[])
 	// min_element(@begin, @end, compare(O,O)->bool)
 	{
 		std::vector<int> v {7,9,3,5,3,2,4,1,8,0};
-		// smallest in subrange (as shown in image):
+		// smallest in subrange 
 		auto i = min_element(begin(v)+2, begin(v)+7);
 		auto min = *i;  // int min = 2
 		// smallest in entire vector:
@@ -141,7 +141,7 @@ int main(int argc, char const *argv[])
 	// max_element(@begin, @end, compare(O,O)->bool)
 	{
 		std::vector<int> v {7,9,3,5,3,2,4,1,8,0};
-		// largest in subrange (as shown in image):
+		// largest in subrange
 		auto i = max_element(begin(v)+2, begin(v)+7);
 		auto max = *i;  // int max = 5
 		// largest in entire vector:

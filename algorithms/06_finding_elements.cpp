@@ -41,7 +41,7 @@ int main(int argc, char const *argv[])
 				auto const index = distance(begin(v), j);  // index = 0
 			}
 			auto k = find(begin(v), end(v), 7);
-			if (k != end(v)) { /*false ⇒ NOT found*/ }
+			if (k != end(v)) {  }    /*false ⇒ NOT found*/
 
 			/// C++ 20
 			// find(range, value)

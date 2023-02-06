@@ -28,7 +28,7 @@ int main(int argc, char const *argv[])
 		// iota(@begin, @end, start_value)
 		std::vector<int> v;
 		v.resize(9,0);
-		// fill subrange (as shown in image)
+		// fill subrange
 		iota(begin(v)+2, begin(v)+7, 1);
 		for (int x : v) { std::cout << x << ' '; }  // 0 0 1 2 3 4 5 0 0
 		// fill entire vector

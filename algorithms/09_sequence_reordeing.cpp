@@ -24,7 +24,11 @@
 
 #include <iostream>
 #include <vector>
-//#include <iostream>
+#include <array>
+#include <algorithm>
+
+using namespace std;
+
 
 int main(int argc, char const *argv[])
 {
@@ -34,7 +38,7 @@ int main(int argc, char const *argv[])
 		{
 			// reverse(@begin, @end)
 			std::vector<int> v {0,1,2,4,6,8,9,3,5};
-			// reverse subrange (as shown in image):
+			// reverse subrange
 			reverse(begin(v)+2, begin(v)+7);
 			for (int x : v) { cout << x << ' '; }  // 0 1 9 8 6 4 2 3 5
 			// reverse entire vector:
@@ -56,11 +60,11 @@ int main(int argc, char const *argv[])
 
 			/// C++ 20
 			// ranges::reverse_copy(input, @out) -> {@in, @out}
-			std::vector<int> in {2,4,6,8,9};
+			/*std::vector<int> in {2,4,6,8,9};
 			std::vector<int> out;
 			out.resize(in.size());
 			std::ranges::reverse_copy(in, begin(out));
-			for (int x : out) { cout << x <<' '; }  // 9 8 6 4 2
+			for (int x : out) { cout << x <<' '; }  // 9 8 6 4 2*/
 		}
 
 		// 	rotate / rotate_copy
@@ -100,10 +104,10 @@ int main(int argc, char const *argv[])
 		{
 			/// C++20
 			// shift_left(@begin, @end, by) -> @shifted_end
-			std::vector<int> v {1,2,3,4,5,6,7,8};
+			/*std::vector<int> v {1,2,3,4,5,6,7,8};
 			int const by = 3;
 			shift_left(begin(v), end(v), by);
-			for (int x : v) { cout << x <<' '; }  // 4 5 6 7 8 ? ? ? (@shifted_end -> idx[5](?))
+			for (int x : v) { cout << x <<' '; }  // 4 5 6 7 8 ? ? ? (@shifted_end -> idx[5](?))*/
 
 			/// C++23
 			// shift_left(range, by) -> shifted_view
@@ -117,10 +121,10 @@ int main(int argc, char const *argv[])
 		{
 			/// C++20
 			// shift_right(@begin, @end, by) -> @shifted_end
-			std::vector<int> v {1,2,3,4,5,6,7,8};
+			/*std::vector<int> v {1,2,3,4,5,6,7,8};
 			int const by = 3;
 			shift_right(begin(v), end(v), by);
-			for (int x : v) { cout << x <<' '; }  // ? ? ? 1 2 3 4 5
+			for (int x : v) { cout << x <<' '; }  // ? ? ? 1 2 3 4 5*/
 
 			/// C++23
 			// shift_right(range, by) -> shifted_view
@@ -133,7 +137,7 @@ int main(int argc, char const *argv[])
 		// 	shuffle C++11
 		{
 			// shuffle(@begin, @end, random_engine)
-			#include <algorithm>
+			/*#include <algorithm>
 			#include <random>
 			// 32 bit mersenne twister engine
 			auto const seed = std::random_device{}();
@@ -149,7 +153,7 @@ int main(int argc, char const *argv[])
 			auto reng = std::mt19937{seed};
 			std::vector<int> v {2,3,4,5,6};
 			std::ranges::shuffle(v, reng);
-			for (int x : v) { cout << x <<' '; } // 5 6 3 4 2 // ! random
+			for (int x : v) { cout << x <<' '; } // 5 6 3 4 2 // ! random*/
 		}
 	}
 	//----------------------------------------------------------//
@@ -161,7 +165,7 @@ int main(int argc, char const *argv[])
 			// sort(@begin, @end)
 			// sort(@begin, @end, compare(O,O) -> bool)
 			std::vector<int> v {8,9,3,1,2,3,5,4,7,6};
-			// sort subrange (as shown in image):
+			// sort subrange
 			sort(begin(v)+2, begin(v)+8);
 			for (int x : v) { cout << x <<' '; }  // 8 9 1 2 3 3 4 5 7 6
 			// sort entire vector:
@@ -174,12 +178,12 @@ int main(int argc, char const *argv[])
 			/// C++20
 			// sort(range) -> @end
 			// sort(range, compare(O,O) -> bool) -> @end
-			std::vector<int> range {3,1,2,3,5,4};
+			/*std::vector<int> range {3,1,2,3,5,4};
 			std::ranges::sort(range);
 			for (int x : range) { cout << x <<' '; }  // 1 2 3 3 4 5
 			// sort in descending order:
 			std::ranges::sort(range, std::greater<>{});
-			for (int x : range) { cout << x <<' '; }  // 5 4 3 3 2 1
+			for (int x : range) { cout << x <<' '; }  // 5 4 3 3 2 1*/
 		}
 
 		// 	stable_sort
@@ -280,7 +284,7 @@ int main(int argc, char const *argv[])
 			// is_sorted(@begin, @end) -> true
 			// is_sorted(@begin, @end, compare(O,O) -> bool) -> bool
 			std::vector<int> v {2,3,4,5,6,1,0};
-			// test subrange (as shown in image):
+			// test subrange
 			cout << is_sorted(begin(v), begin(v)+5);  // true
 			// test entire vector:
 			cout << is_sorted(begin(v), end(v));  // false
@@ -288,8 +292,8 @@ int main(int argc, char const *argv[])
 			/// C++20
 			// is_sorted(range) -> true
 			// is_sorted(range, compare(O,O) -> bool) -> bool
-			std::vector<int> v {2,3,4,5,6};
-			cout << std::ranges::is_sorted(v);  // true
+			/*std::vector<int> v {2,3,4,5,6};
+			cout << std::ranges::is_sorted(v);  // true*/
 		}
 
 		// 	is_sorted_until
@@ -297,7 +301,7 @@ int main(int argc, char const *argv[])
 			// is_sorted_until(@begin, @end -> @sorted_end) // ( 1st elm not sorted)
 			// is_sorted_until(@begin, @end, compare(O,O) -> bool) -> @sorted_end
 			std::vector<int> v {2,3,4,5,4,2,0,7,8};
-			// test from 1st to 7th (as shown in image):
+			// test from 1st to 7th
 			auto i = is_sorted_until(begin(v), begin(v)+7);
 			// print sorted subrange
 			auto const print = [](int x){ cout << x << ' '; };
@@ -331,11 +335,11 @@ int main(int argc, char const *argv[])
 
 			/// C++20
 			// partition(range, compare(O) -> bool) -> 2nd_part_view
-			auto const is_odd = [](int x) { return (x & 1); };
+			/*auto const is_odd = [](int x) { return (x & 1); };
 			std::vector<int> v {3,4,6,5,7,8,0};
 			auto r2 = std::ranges::partition(v, is_odd);
 			// print 2nd subrange
-			for (int x : r2) { cout << x << ' '; }  // 6 4 8 0
+			for (int x : r2) { cout << x << ' '; }  // 6 4 8 0*/
 
 			//  partition_copy(@beg, @end, @fTrue, @fFalse, compare(O) -> bool) -> {@fTrue_end, @fFalse_end}
 			auto const is_odd = [](int x) { return (x & 1); };
@@ -481,11 +485,11 @@ int main(int argc, char const *argv[])
 			/// C++20
 			//is_permutation(range1, range2) -> bool
 			// returns true if range2 is a permutation of range1
-			std::vector<int> v1 {1,2,3,4};
+			/*std::vector<int> v1 {1,2,3,4};
 			std::vector<int> v2 {4,2,1,3};
 			std::vector<int> v3 {5,0,1,2};
 			cout << std::ranges::is_permutation(v1, v2);  // true
-			cout << std::ranges::is_permutation(v1, v3);  // false
+			cout << std::ranges::is_permutation(v1, v3);  // false*/
 		}
 	}
 

@@ -70,7 +70,7 @@ int main(int argc, char const *argv[])
 
 	// lexicographical_compare
 	{
-		// lexicographical_compare(@begin1, @end1, ,@begin2, @end2)
+		// lexicographical_compare(@beg1, @end1, ,@beg2, @end2) -> bool
 		std::string r1 = "xalgori";
 		std::string r2 = "abced";
 		std::cout << lexicographical_compare(begin(r1)+1, begin(r1)+5,

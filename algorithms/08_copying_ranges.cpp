@@ -59,7 +59,7 @@ int main(int argc, char const *argv[])
 		for (int x : tgt) { std::cout << x << ' '; }  // 4 5 6 7 8
 
 		/// C++20
-		// copy(source_range, @target_begin) -> {@in, @out} ({src.end(), tgt.begin()})
+		// ranges::copy_backward(source_range, @target_begin) -> {@in, @out} ({src.end(), tgt.begin()})
 		/*std::vector<int> src {4,5,6,7,8};
 		std::vector<int> tgt;
 		tgt.resize(src.size());
@@ -99,7 +99,7 @@ int main(int argc, char const *argv[])
 	{
 		// sample(@beg, @end, @out, n, random_generator) -> @out_end (C++17)
 		// select elements with equal probability withour replacement
-		#include <random>
+		/*#include <random>
 		// 32 bit mersenne twister engine
 		auto const seed = std::random_device{}();
 		auto reng = std::mt19937{seed};
@@ -108,7 +108,7 @@ int main(int argc, char const *argv[])
 		samples.resize(n);
 		std::vector<int> pop {1,2,4,6,8,9};
 		sample(begin(pop), end(pop), begin(samples), n, reng);
-		for (int x : samples) { cout << x <<' '; }  // 1 4 6 8
+		for (int x : samples) { cout << x <<' '; }  // 1 4 6 8*/
 
 		// ranges::sample(range, @out, n, random_generator) -> @end (C++20)
 		/*#include <random>

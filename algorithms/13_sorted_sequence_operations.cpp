@@ -31,7 +31,7 @@ int main(int argc, char const *argv[])
 			// binary_search(@beg, @end, val) -> bool
 			// binary_search(@beg, @end, val, comp(O,O) -> bool) -> bool
 			std::vector<int> v {1,2,3,4,5,6,7,8};
-			// search in subrange (as in image):
+			// search in subrange:
 			std::cout << binary_search(begin(v)+2, begin(v)+7, 4);  // true
 			// search in entire vector:
 			std::cout << binary_search(begin(v), end(v), 8);  // true
@@ -48,7 +48,7 @@ int main(int argc, char const *argv[])
 		{
 			// lower_bound(@beg, @end, val) -> @1st elment found or @end
 			std::vector<int> v {0,1,2,3,4,5,6,7,8};
-			// find in subrange (as shown in image):
+			// find in subrange
 			auto i = lower_bound(begin(v)+3, begin(v)+7, 5);
 			if (i != end(v)) {  // true ⇒ found
 				std::cout << *i;  // 5
@@ -73,7 +73,7 @@ int main(int argc, char const *argv[])
 		{
 			// upper_bound(@beg, @end, val) -> @1st elment > value or @end
 			std::vector<int> v {0,1,2,3,4,5,6,7,8};
-			// find in subrange (as shown in image):
+			// find in subrange
 			auto i = upper_bound(begin(v)+3, begin(v)+7, 5);
 			if (i != end(v)) {  // true ⇒ found
 				std::cout << *i;  // 6

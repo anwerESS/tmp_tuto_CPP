@@ -1,11 +1,11 @@
 /// https://hackingcpp.com/cpp/std/iterators_intro.html
 
-// Default Iterators 
-// Reverse Iterators 
-// Iterator-Based Loops 
-// Example: Swap Adjacent Pairs 
-// Iterator Ranges 
-// Element Count of Iterator Range 
+// Default Iterators
+// Reverse Iterators
+// Iterator-Based Loops
+// Example: Swap Adjacent Pairs
+// Iterator Ranges
+// Element Count of Iterator Range
 
 
 #include <iostream>

@@ -100,7 +100,7 @@ int main(int argc, char const *argv[])
 		// The output target must be able to receive as many elements as there are in the input range.
 		// The function (object) f must not have side effects / be stateful because the order in which it is applied to the input elements is not guaranteed.
 		{
-			// transform(@begin, @end, f(O)-> * ) -> @out_end
+			// transform(@begin, @end, @out, f(O)-> * ) -> @out_end
 			// f: 'x' → "<x>"
 			auto f = [](char c) { return std::string("<") + c + ">"; };
 			std::string in = "vwxyza";
@@ -110,7 +110,7 @@ int main(int argc, char const *argv[])
 			transform(begin(in)+1, begin(in)+5, begin(out), f);
 			for (auto const& x : out) { std::cout << x << ' '; }  // <w> <x> <y> <z>
 
-			// transform(@begin, @end, f(O,O)-> * ) -> @end
+			// transform(@beg1, @end1, @beg2, @out, f(O,O)-> * ) -> @end
 			// f: 'y',3 → "yyy"
 			auto f = [](char c, int i) { return std::string(i,c); };
 			std::string in1 = "wxy";
