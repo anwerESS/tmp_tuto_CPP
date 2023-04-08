@@ -1,0 +1,16 @@
+Factory Method and Abstract Factory are both design patterns that aim to provide a way to create objects while decoupling the creation logic from the client code. However, there are some key differences between the two patterns.
+
+Factory Method pattern defines an interface for creating objects, but it allows subclasses to decide which class to instantiate. In other words, the Factory Method pattern creates objects through inheritance.
+
+On the other hand, the Abstract Factory pattern provides an interface for creating families of related or dependent objects, without specifying their concrete classes. Abstract Factory creates objects through composition.
+
+Here's a summary of the main differences:
+
+Factory Method creates objects through inheritance, while Abstract Factory creates objects through composition.
+Factory Method is concerned with creating a single product, while Abstract Factory creates families of related products.
+Factory Method pattern uses a single method to create the object, while Abstract Factory pattern uses a set of related factory methods to create the object.
+To understand this better, let's take an example. Suppose you want to create a car. With the Factory Method pattern, you would have a VehicleFactory interface that defines a method for creating a Vehicle. Then, you would have a CarFactory class that implements the VehicleFactory interface and returns a Car object.
+
+With the Abstract Factory pattern, you would have an abstract VehicleFactory interface that defines methods for creating related objects such as Engine, Chassis, and Tires. Then, you would have concrete CarFactory and TruckFactory classes that implement the VehicleFactory interface to create Car and Truck objects with their respective Engine, Chassis, and Tires.
+
+In summary, while both patterns share the same goal of creating objects while decoupling the creation logic from the client code, they differ in their approach and the level of abstraction they provide.

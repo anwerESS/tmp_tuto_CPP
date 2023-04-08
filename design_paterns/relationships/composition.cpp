@@ -4,6 +4,8 @@
 
 // Composition is often used when one class has ownership over another class, meaning that the lifetime of the contained class is dependent on the lifetime of the containing class. In our example, the engine only exists as long as the car exists.
 
+/// for example the std::array std::vector ... use the composition patern
+
 #include <iostream>
 #include <string>
 using namespace std;
